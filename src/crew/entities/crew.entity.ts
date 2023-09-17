@@ -13,6 +13,8 @@ import {
 } from 'typeorm';
 import { Signupform } from 'src/signup/entities/signupForm.entity';
 import { Signup } from 'src/signup/entities/signup.entity';
+import { Member } from 'src/member/entities/member.entity';
+import { Like } from 'src/like/entities/like.entity';
 
 @Entity('crew')
 export class Crew {
@@ -23,6 +25,9 @@ export class Crew {
   @JoinColumn({ name: 'userId' })
   userId: number;
 
+  @OneToMany(() => Member, (member) => member.crewId)
+  member: Member[];
+
   @OneToMany(() => Notice, (notice) => notice.crewId)
   notice: Notice[];
 
@@ -31,6 +36,9 @@ export class Crew {
 
   @OneToMany(() => Signup, (signup) => signup.crewId)
   signup: Signupform[];
+
+  @OneToMany(() => Like, (like) => like.crewId)
+  like: Like[];
 
   @Column()
   category: string;
