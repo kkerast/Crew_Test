@@ -31,14 +31,13 @@ on:
     branches: [ "master" ]
 
 env:
-  AWS_REGION: ap-northeast-2                   # set this to your preferred AWS region, e.g. us-west-1
-  ECR_REPOSITORY: back/team-crew           # set this to your Amazon ECR repository name
-  ECS_SERVICE: team-crew                 # set this to your Amazon ECS service name
-  ECS_CLUSTER: team-crew                 # set this to your Amazon ECS cluster name
-  ECS_TASK_DEFINITION: team-crew-task # set this to the path to your Amazon ECS task definition
-                                               # file, e.g. .aws/task-definition.json
-  CONTAINER_NAME: team-crew           # set this to the name of the container in the
-                                               # containerDefinitions section of your task definition
+  AWS_REGION: ap-northeast-2
+  ECR_REPOSITORY: back/team-crew
+  ECS_SERVICE: team-crew-service
+  ECS_CLUSTER: team-crew-cluster
+  ECS_TASK_DEFINITION: team-crew-task
+  CONTAINER_NAME: team-crew-container
+
 
 permissions:
   contents: read
