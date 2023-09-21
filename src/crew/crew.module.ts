@@ -5,9 +5,20 @@ import { CrewRepository } from './crew.repository';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Crew } from './entities/crew.entity';
 import { CrewController } from './crew.controller';
+import { SignupModule } from 'src/signup/signup.module';
+import { MemberModule } from 'src/member/member.module';
+import { NoticeModule } from 'src/notice/notice.module';
+import { LikeModule } from 'src/like/like.module';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Crew]), forwardRef(() => HomeModule)],
+  imports: [
+    TypeOrmModule.forFeature([Crew]),
+    forwardRef(() => HomeModule),
+    forwardRef(() => SignupModule),
+    forwardRef(() => MemberModule),
+    forwardRef(() => NoticeModule),
+    forwardRef(() => LikeModule),
+  ],
   providers: [CrewService, CrewRepository],
   exports: [CrewService, CrewRepository],
   controllers: [CrewController],

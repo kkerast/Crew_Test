@@ -24,10 +24,10 @@ export class NaverStrategy extends PassportStrategy(Strategy, 'naver') {
     const provider = profile.provider;
 
     // user 정보 확인
-    const exUser = await this.authService.validateUser(email);
+    const exUser = await this.authService.validateUser(email, provider);
     if (exUser) {
       const token = await this.authService.getToken(exUser.userId);
-      return token;
+      return { token, userId: exUser.userId };
     }
     if (exUser === null) {
       const newUser = await this.authService.create({
@@ -35,8 +35,8 @@ export class NaverStrategy extends PassportStrategy(Strategy, 'naver') {
         nickname,
         provider,
       });
-      const token = await this.authService.getToken(exUser.userId);
-      return token;
+      const token = await this.authService.getToken(newUser.userId);
+      return { token, userId: newUser.userId };
     }
   }
 }

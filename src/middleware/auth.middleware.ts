@@ -49,7 +49,7 @@ export class AuthMiddleWare implements NestMiddleware<Request, Response> {
       res.clearCookie('authorization');
       return res
         .status(HttpStatus.UNAUTHORIZED)
-        .json({ message: '잘못된 인증 방법입니다.' });
+        .json({ message: '잘못된 인증 방법입니다.(auth.middleware)' });
     }
   }
 }

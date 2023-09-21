@@ -2,16 +2,6 @@ import { ApiProperty } from '@nestjs/swagger/dist';
 import { IsDate, IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
 export class CreateCrewDto {
-  // //userId
-  @ApiProperty({
-    example: 1,
-    description: 'userId',
-    required: true,
-  })
-  @IsNumber()
-  @IsNotEmpty()
-  userId: number;
-
   //category
   @ApiProperty({
     example: '운동',
@@ -84,13 +74,13 @@ export class CreateCrewDto {
 
   //crewSignUp
   @ApiProperty({
-    example: true,
+    example: 1,
     description: 'crewSignUp',
     required: true,
   })
   @IsNumber()
   @IsNotEmpty()
-  crewSignUp: boolean;
+  crewSignup: boolean;
 
   //crewTitle
   @ApiProperty({
@@ -114,7 +104,8 @@ export class CreateCrewDto {
 
   //thumbnail
   @ApiProperty({
-    example: 'URL',
+    example:
+      'https://www.sportsw.kr/news/data/20230627/p1065588600851429_657_thum.jpg',
     description: 'thumbnail',
     required: true,
   })
