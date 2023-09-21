@@ -53,4 +53,4 @@ jobs:
         run: |
           docker ps -q --filter "name={your image name}" | grep -q . && docker stop {your image name} && docker rm -fv {your image name}
           docker run -d -p 8080:8080 --name cicd --restart always ${{ env.DOCKER_IMAGE }}:${{ env.VERSION }}
-[출처] [Github Actions] AWS EC2에 CI/CD를 해보자|작성자 DolphaGo
+
