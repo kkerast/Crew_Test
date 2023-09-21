@@ -42,7 +42,7 @@ export class CrewController {
   })
   @ApiResponse({
     status: 201,
-    description: '모임 생성 성공',
+    description: '모임 생성 성공  ',
   })
   @ApiBearerAuth('accessToken')
   async createCrew(
