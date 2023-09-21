@@ -31,12 +31,7 @@ on:
     branches: [ "master" ]
 
 env:
-  AWS_REGION: ap-northeast-2
-  ECR_REPOSITORY: back/team-crew
-  ECS_SERVICE: team-crew-service
-  ECS_CLUSTER: team-crew-cluster
-  ECS_TASK_DEFINITION: team-crew-task
-  CONTAINER_NAME: team-crew-container
+
 
 
 permissions:
