@@ -17,7 +17,7 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
     .setTitle('CREW API Document')
-    .setDescription('Crew API 서버')
+    .setDescription('Crew API 서버 ')
     .setVersion('1.0')
     .addBearerAuth(
       {
